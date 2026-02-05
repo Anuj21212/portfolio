@@ -1,13 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Anuj ki Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #3f51b5;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3f51b5;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .hero-content h5 {
+      font-weight: 300;
+      margin-bottom: 35px;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #ffffff;
+      color: #3f51b5;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      background: #f1f1f1;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 25px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to My Website!</h1>
-  <p>Ye meri pehli free wefdffffbsite hai 🚀</p>
-  <h5>aasdnasdubasiub</h5>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Anuj</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Website 🚀</h1>
+      <p>Ye meri pehli free website hai — aur yahan se journey start hoti hai!</p>
+      <h5>Learning • Growing • Building</h5>
+      <a href="#">Get Started</a>
+    </div>
+  </section>
+
 </body>
-
 </html>
-
