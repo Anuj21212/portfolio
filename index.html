@@ -17,30 +17,35 @@
     }
 
     body {
-      background: #f5f7fa;
+      background: #f4f6fb;
+      overflow-x: hidden;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       background: #ffffff;
-      padding: 15px 60px;
+      padding: 15px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
-      color: #3f51b5;
+      color: #4f46e5;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
     }
 
     nav a {
-      margin-left: 25px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -48,60 +53,92 @@
     }
 
     nav a:hover {
-      color: #3f51b5;
+      color: #4f46e5;
     }
 
-    /* Hero Section */
+    /* HERO */
     .hero {
-      height: 90vh;
+      min-height: calc(100vh - 70px);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      padding: 40px 6%;
       background: linear-gradient(135deg, #667eea, #764ba2);
       color: #fff;
-      padding: 20px;
+      text-align: center;
     }
 
-    .hero-content h1 {
-      font-size: 50px;
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
       margin-bottom: 15px;
+      font-weight: 700;
     }
 
-    .hero-content p {
-      font-size: 18px;
-      margin-bottom: 25px;
+    .hero p {
+      font-size: clamp(16px, 2.2vw, 20px);
+      margin-bottom: 15px;
       opacity: 0.95;
     }
 
-    .hero-content h5 {
+    .hero h5 {
+      font-size: clamp(14px, 1.8vw, 16px);
       font-weight: 300;
       margin-bottom: 35px;
+      letter-spacing: 1px;
     }
 
-    .hero-content a {
+    .hero a {
       display: inline-block;
-      padding: 12px 30px;
+      padding: 14px 36px;
       background: #ffffff;
-      color: #3f51b5;
+      color: #4f46e5;
+      border-radius: 40px;
       text-decoration: none;
-      border-radius: 30px;
       font-weight: 600;
       transition: all 0.3s ease;
     }
 
-    .hero-content a:hover {
+    .hero a:hover {
+      transform: translateY(-4px);
       background: #f1f1f1;
-      transform: translateY(-3px);
     }
 
+    /* TABLET */
+    @media (max-width: 992px) {
+      nav {
+        gap: 18px;
+      }
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
       header {
-        padding: 15px 25px;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      .hero-content h1 {
-        font-size: 36px;
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 30px 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero a {
+        padding: 12px 28px;
       }
     }
   </style>
@@ -109,7 +146,7 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <div class="logo">Anuj</div>
     <nav>
@@ -120,13 +157,13 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <h1>Welcome to My Website 🚀</h1>
-      <p>Ye meri pehli free website hai — aur yahan se journey start hoti hai!</p>
-      <h5>Learning • Growing • Building</h5>
-      <a href="#">Get Started</a>
+      <p>Ye meri pehli free website hai — aur yahin se meri web journey start hoti hai</p>
+      <h5>Learning • Designing • Developing</h5>
+      <a href="#">Explore More</a>
     </div>
   </section>
 
