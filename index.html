@@ -35,40 +35,42 @@ header{
   position:sticky;
   top:0;
   z-index:999;
-  padding:18px 6%;
+  padding:22px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(15,23,42,0.7);
-  backdrop-filter:blur(14px);
+  gap:30px;
+  background:rgba(15,23,42,0.75);
+  backdrop-filter:blur(16px);
+  min-height:90px;
 }
 
-.logo{
-  font-size:26px;
-  font-weight:700;
-  background:linear-gradient(45deg,var(--primary),var(--secondary));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-
+/* Logo */
 .logo img{
-  height: 42px;
-  transition: 0.4s ease;
-  filter: drop-shadow(0 6px 14px rgba(99,102,241,0.45));
+  height:64px;
+  width:auto;
+  transition:0.4s ease;
+  filter:drop-shadow(0 8px 20px rgba(99,102,241,0.5));
 }
 
 .logo img:hover{
-  transform: scale(1.08);
+  transform:scale(1.1);
 }
 
+/* Navigation */
+nav{
+  display:flex;
+  align-items:center;
+  gap:32px;
+  flex-wrap:wrap; /* ⭐ allows breathing on mid screens */
+}
 
 nav a{
   color:#e5e7eb;
-  margin-left:28px;
   text-decoration:none;
   font-weight:500;
   position:relative;
+  padding:6px 0;
 }
 
 nav a::after{
@@ -81,7 +83,10 @@ nav a::after{
   background:var(--primary);
   transition:0.3s;
 }
-nav a:hover::after{width:100%;}
+
+nav a:hover::after{
+  width:100%;
+}
 
 /* ================= HERO ================= */
 .hero{
@@ -256,6 +261,41 @@ footer{
 }
 
 /* ================= RESPONSIVE ================= */
+
+
+  /* ================= HEADER RESPONSIVE ================= */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    align-items:center;
+    padding:20px 5%;
+    min-height:auto;
+  }
+
+  .logo img{
+    height:54px;
+  }
+
+  nav{
+    justify-content:center;
+    gap:20px;
+  }
+}
+
+@media(max-width:480px){
+  nav{
+    gap:16px;
+  }
+
+  nav a{
+    font-size:14px;
+  }
+
+  .logo img{
+    height:48px;
+  }
+}
+
 @media(max-width:900px){
   .hero, .about-box{
     grid-template-columns:1fr;
@@ -375,5 +415,6 @@ footer{
 
 </body>
 </html>
+
 
 
