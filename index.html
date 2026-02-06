@@ -1,225 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Anuj | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Anuj | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #4f46e5;
-      --dark: #1f2937;
-      --light: #f4f6fb;
-    }
+<style>
+:root{
+  --primary:#6366f1;
+  --secondary:#8b5cf6;
+  --dark:#0f172a;
+  --light:#f8fafc;
+  --glass:rgba(255,255,255,0.15);
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    body {
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+body{
+  background:linear-gradient(180deg,#0f172a,#020617);
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    /* HEADER */
-    header {
-      background: #fff;
-      padding: 15px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,0.7);
+  backdrop-filter:blur(14px);
+}
 
-    .logo {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary);
-    }
+.logo{
+  font-size:26px;
+  font-weight:700;
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+nav a{
+  color:#e5e7eb;
+  margin-left:28px;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+}
 
-    nav a:hover {
-      color: var(--primary);
-    }
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:var(--primary);
+  transition:0.3s;
+}
+nav a:hover::after{width:100%;}
 
-    section {
-      padding: 80px 6%;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:80px 6%;
+  gap:40px;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      gap: 40px;
-    }
+.hero-text h1{
+  font-size:clamp(38px,5vw,60px);
+  line-height:1.2;
+}
+.hero-text span{
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .hero-text h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      margin-bottom: 15px;
-    }
+.hero-text p{
+  margin:22px 0;
+  color:#cbd5f5;
+  max-width:520px;
+}
 
-    .hero-text p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      opacity: 0.95;
-    }
+.hero-btns a{
+  display:inline-block;
+  margin-right:15px;
+  padding:14px 36px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.4s;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: #fff;
-      color: var(--primary);
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.btn-primary{
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  color:#fff;
+}
+.btn-primary:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 40px rgba(99,102,241,0.4);
+}
 
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    }
+.btn-outline{
+  border:2px solid var(--primary);
+  color:#fff;
+}
+.btn-outline:hover{
+  background:var(--primary);
+}
 
-    .hero-img {
-      width: 320px;
-      max-width: 100%;
-      border-radius: 50%;
-      animation: float 4s ease-in-out infinite;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-    }
+/* HERO IMAGE */
+.hero-img{
+  text-align:center;
+}
+.hero-img img{
+  width:320px;
+  max-width:90%;
+  border-radius:50%;
+  animation:float 4s ease-in-out infinite;
+  box-shadow:0 30px 60px rgba(0,0,0,0.6);
+}
 
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-18px);}
+  100%{transform:translateY(0);}
+}
 
-    /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
+/* ================= SECTION COMMON ================= */
+section{
+  padding:90px 6%;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.section-title h2{
+  font-size:36px;
+}
+.section-title p{
+  color:#94a3b8;
+}
 
-    .about img {
-      width: 280px;
-      border-radius: 20px;
-      transition: transform 0.4s;
-    }
+/* ================= ABOUT ================= */
+.about-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.about-card{
+  background:var(--glass);
+  padding:35px;
+  border-radius:20px;
+  backdrop-filter:blur(16px);
+}
+.about-card h3{
+  margin-bottom:15px;
+}
 
-    .about img:hover {
-      transform: scale(1.05);
-    }
+/* ================= SKILLS ================= */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.skill{
+  background:var(--glass);
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  transition:0.4s;
+}
+.skill:hover{
+  transform:translateY(-8px);
+  background:rgba(99,102,241,0.25);
+}
 
-    .about h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
+/* ================= PROJECTS ================= */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.project{
+  background:var(--glass);
+  padding:25px;
+  border-radius:18px;
+  transition:0.4s;
+}
+.project:hover{
+  transform:translateY(-10px) scale(1.02);
+}
 
-    /* SKILLS */
-    .skills {
-      background: #fff;
-    }
+/* ================= FAQ ================= */
+.faq details{
+  background:var(--glass);
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:15px;
+  cursor:pointer;
+}
+.faq summary{
+  font-weight:600;
+}
 
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
+/* ================= CONTACT ================= */
+.contact-box{
+  text-align:center;
+}
+.contact-box a{
+  margin-top:20px;
+  display:inline-block;
+  padding:14px 38px;
+  border-radius:40px;
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .skill {
-      padding: 25px;
-      border-radius: 20px;
-      background: var(--light);
-      text-align: center;
-      transition: transform 0.3s;
-    }
+/* ================= FOOTER ================= */
+footer{
+  padding:25px;
+  text-align:center;
+  background:#020617;
+  color:#94a3b8;
+}
 
-    .skill:hover {
-      transform: translateY(-10px);
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .project {
-      background: #fff;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-8px);
-    }
-
-    /* FAQ */
-    .faq details {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      cursor: pointer;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #111827;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero, .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    }
-  </style>
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero, .about-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Anuj</div>
+  <div class="logo">Anuj.</div>
   <nav>
+    <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -227,64 +266,96 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Hi, I’m Anuj 👋</h1>
-    <p>A passionate learner building modern and creative web experiences.</p>
-    <a href="#projects" class="btn">View My Work</a>
+    <h1>Hi, I'm <span>Anuj</span><br>Creative Web Developer</h1>
+    <p>I design and build modern, responsive and visually impressive websites with clean UI and smooth animations.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-outline">Hire Me</a>
+    </div>
   </div>
-  <img src="hero.png" alt="Anuj" class="hero-img">
+
+  <div class="hero-img">
+    <img src="hero.png" alt="Anuj">
+  </div>
 </section>
 
-<section id="about" class="about">
-  <img src="hero.png" alt="Anuj">
-  <div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
     <h2>About Me</h2>
-    <p>
-      I’m a beginner web developer focused on learning, experimenting,
-      and creating beautiful portfolio projects using HTML & CSS.
-    </p>
+    <p>Who I am & what I do</p>
+  </div>
+
+  <div class="about-box">
+    <div class="about-card">
+      <h3>Bio</h3>
+      <p>I’m a passionate learner and frontend developer focused on building clean, premium and user-friendly web experiences.</p>
+    </div>
+    <div class="about-card">
+      <h3>Expertise</h3>
+      <p>HTML • CSS • Responsive Design • UI/UX • Animations • GitHub Pages</p>
+    </div>
   </div>
 </section>
 
-<section id="skills" class="skills">
-  <h2 style="text-align:center;">Skills & Expertise</h2>
-  <div class="skill-grid">
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-title">
+    <h2>Skills</h2>
+  </div>
+  <div class="skills">
     <div class="skill">HTML5</div>
     <div class="skill">CSS3</div>
-    <div class="skill">Responsive Design</div>
-    <div class="skill">GitHub Pages</div>
+    <div class="skill">UI Design</div>
+    <div class="skill">Responsive Layout</div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <h2 style="text-align:center;">Projects</h2>
-  <div class="projects-grid">
+  <div class="section-title">
+    <h2>Projects</h2>
+  </div>
+  <div class="projects">
     <div class="project">Portfolio Website</div>
     <div class="project">Landing Page Design</div>
-    <div class="project">Responsive UI Layout</div>
+    <div class="project">Business Website</div>
   </div>
 </section>
 
-<section class="faq">
-  <h2>FAQ</h2>
-  <details>
-    <summary>Are you a beginner?</summary>
-    <p>Yes, and improving every day.</p>
-  </details>
-  <details>
-    <summary>What do you focus on?</summary>
-    <p>Clean design, responsiveness, and learning modern UI.</p>
-  </details>
+<!-- FAQ -->
+<section>
+  <div class="section-title">
+    <h2>FAQ</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Do you make responsive websites?</summary>
+      <p>Yes, all designs are fully responsive.</p>
+    </details>
+    <details>
+      <summary>Can you design modern UI?</summary>
+      <p>Absolutely. Clean, premium and modern UI is my focus.</p>
+    </details>
+  </div>
 </section>
 
-<section id="contact" class="contact">
-  <h2>Let’s Work Together</h2>
-  <p>Contact me for collaborations or learning together.</p>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact Me</h2>
+  </div>
+  <div class="contact-box">
+    <p>Let’s work together on your next project.</p>
+    <a href="#">Get in Touch</a>
+  </div>
 </section>
 
 <footer>
-  © 2026 Anuj | Built with ❤️
+  © 2026 Anuj • All Rights Reserved
 </footer>
 
 </body>
